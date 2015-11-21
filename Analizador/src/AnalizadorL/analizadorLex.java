@@ -1,3 +1,11 @@
+/*
+ * ESCUELA POLITECNICA NACIONAL
+ * COMPILADORES Y LENGUAJES
+ * PROYECTO
+ * Nombres: Roberto Toapanta, Bryan Jarrin.
+ * GR!
+ * Tema: Analizaodr Lexico.
+ */
 package AnalizadorL;
 import java.util.Scanner;
 import java.util.StringTokenizer;
@@ -13,22 +21,22 @@ public class analizadorLex{
 	TokenClass patron=new TokenClass();
 	private boolean verificacion;
 	private String palabra;
+	
 	public analizadorLex(){
 			verificacion=false;
-			//texto=JOptionPane.showInputDialog("Ingresar dato: ");
 			lecturaArchivo();
 	}
 	
 	private void lecturaArchivo(){
 		try{
-			FileReader fileName=new FileReader("C:\\Users\\Roberto\\Documents\\GitHub\\repositorio\\Analizador\\doc\\hola.txt");
+			FileReader fileName=new FileReader("doc\\hola.txt");
 			BufferedReader br=new BufferedReader(fileName);
 			String cadena;
 			while((cadena=br.readLine())!=null){
 				StringTokenizer st = new StringTokenizer(cadena);
 				while (st.hasMoreTokens()){
 					palabra=st.nextToken();
-					VerificarTokenClass(palabra);//Enviamos la palabra para saber a que token class pertenece.
+					VerificarTokenClass(palabra);
 				}
 				
 			}
@@ -40,7 +48,7 @@ public class analizadorLex{
 	}
 
 	private void VerificarTokenClass(String texto){
-		for(int i=0 ; i<7 ;i++){
+		for(int i=0 ; i<6 ;i++){
 			switch(i){
 			case 0:
 				if(verificacion!=patron.PalabraReservada(texto)){
@@ -49,32 +57,26 @@ public class analizadorLex{
 				}
 				break;
 			case 1:
-				if(verificacion!=patron.Identificador(texto)){
-					System.out.println("Identificador: "+texto);
+				if(verificacion!=patron.Literales(texto)){
 					i=7;
 				}
 				break;
+			
 			case 2:
-				if(verificacion!=patron.Numero(texto)){
-					System.out.println("Numero: "+texto);
+				if(verificacion!=patron.OperadorCompuesto(texto)){
+					System.out.println("Operador Compuesto: "+texto);
 					i=7;
 				}
 				break;
 			case 3:
-				if(verificacion!=patron.Operador(texto)){
-					System.out.println("Operador: "+texto);
+				if(verificacion!=patron.CaracterEspecial(texto)){
+					System.out.println("CaracterEspecial: "+texto);
 					i=7;
 				}
 				break;
 			case 4:
-				if(verificacion!=patron.Agrupadores(texto)){
-					System.out.println("Agrupador: "+texto);
-					i=7;
-				}
-				break;
-			case 5:
-				if(verificacion!=patron.Terminador(texto)){
-					System.out.println("Terminador: "+texto);
+				if(verificacion!=patron.Identificador(texto)){
+					System.out.println("Identificador: "+texto);
 					i=7;
 				}
 				break;

@@ -1,57 +1,146 @@
+/*
+ * ESCUELA POLITECNICA NACIONAL
+ * COMPILADORES Y LENGUAJES
+ * PROYECTO
+ * Nombres: Roberto Toapanta, Bryan Jarrin.
+ * GR!
+ * Tema: Analizaodr Lexico.
+ */
 package AnalizadorL;
 import java.util.regex.Matcher;
+import AnalizadorL.TokenClass;
 import java.util.regex.Pattern;
 public class TokenClass{
+	private boolean verificar;
 	public boolean PalabraReservada(String texto){
-		 Pattern pat = Pattern.compile("while|for|if|do|int");
-	     Matcher mat = pat.matcher(texto);
-	     if (mat.matches()) {
-	         return true;
-	     } else {
-	         return false;
-	     }
+		Pattern pat = Pattern.compile("int|float|bool|char|string|if|then|else|while|do|input|output|return");
+		Matcher mat = pat.matcher(texto);
+		if (mat.matches()) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public boolean Identificador(String texto){
+		Pattern pat = Pattern.compile("[a-z][a-zA-Z0-9]*");
+		Matcher mat = pat.matcher(texto);
+		if (mat.matches()) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	public boolean OperadorCompuesto(String texto){
+		Pattern pat = Pattern.compile("==|>=|<=|!=|&&");
+		Matcher mat = pat.matcher(texto);
+		if (mat.matches()||texto.equals("||")) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	public boolean CaracterEspecial(String texto){
+		Pattern pat = Pattern.compile(",|;|:|-|/|>|<|=|!|&|}|]");
+		Matcher mat = pat.matcher(texto);
+		if (mat.matches()||texto.equals("+")||texto.equals("(")||texto.equals(")")||texto.equals("*")||texto.equals("$")||texto.equals("{")||texto.equals("[")) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 	
-	public boolean Identificador(String texto){
-		 Pattern pat = Pattern.compile("[a-z][a-zA-Z0-9]*");
-	     Matcher mat = pat.matcher(texto);
-	     if (mat.matches()) {
-	    	    return true;
-	     } else {
-	         return false;
-	     }
+	private boolean entero(String texto){
+		Pattern pat = Pattern.compile("(-)?[0-9]+");
+		Matcher mat = pat.matcher(texto);
+		if (mat.matches()) {
+			return true;
+		} else {
+			return false;
+		}
 	}
-	public boolean Numero(String texto){
-		 Pattern pat = Pattern.compile("[0-9]*(.)?[0-9]+");
-	     Matcher mat = pat.matcher(texto);
-	     if (mat.matches()) {
-	    	    return true;
-	     } else {
-	         return false;
-	     }
+	
+	private boolean Ffloat(String texto){
+		Pattern pat = Pattern.compile("[0-9]+(.)[0-9]+");
+		Matcher mat = pat.matcher(texto);
+		if (mat.matches()) {
+			return true;
+		} else {
+			return false;
+		}
 	}
-	public boolean Operador(String texto){
-		 Pattern pat = Pattern.compile(">|<|==|>=|=>|-|/|<=|=<|=");
-	     Matcher mat = pat.matcher(texto);
-	     if (mat.matches()||texto.equals("+")||texto.equals("*")) {
-	    	    return true;
-	     } else {
-	         return false;
-	     }
+	
+	private boolean Fbool(String texto){
+		Pattern pat = Pattern.compile("true|false");
+		Matcher mat = pat.matcher(texto);
+		if (mat.matches()) {
+			return true;
+		} else {
+			return false;
+		}
 	}
-	public boolean Agrupadores(String texto){
-	     if (texto.equals("(")||texto.equals(")")||texto.equals("[")||texto.equals("]")||texto.equals("{")||texto.equals("}")) {
-	    	    return true;
-	     } else {
-	         return false;
-	     }
+	
+	private boolean Fchar(String texto){
+		Pattern pat = Pattern.compile("'([^s]|s)'");
+		Matcher mat = pat.matcher(texto);
+		if (mat.matches()) {
+			return true;
+		} else {
+			return false;
+		}
 	}
-	public boolean Terminador(String texto){
-	     if (texto.equals(";")) {
-	    	    return true;
-	     } else {
-	         return false;
-	     }
+	
+	private boolean Fstring(String texto){
+		Pattern pat = Pattern.compile("“([^s]|s)+”"); 
+		Matcher mat = pat.matcher(texto);
+		if (mat.matches()) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	public boolean Literales(String texto){
+		verificar=false;
+		for(int i=0;i<5;i++){
+			switch(i){
+			case 0:
+				if(verificar!=entero(texto)){
+					System.out.println("Literal entero: "+texto);
+					i=7;
+					verificar=true;
+				}
+				break;
+			case 1:
+				if(verificar!=Ffloat(texto)){
+					System.out.println("Literal float: "+texto);
+					i=7;
+					verificar=true;
+				}
+				break;
+			case 2:
+				if(verificar!=Fbool(texto)){
+					System.out.println("Literal boolean: "+texto);
+					i=7;
+					verificar=true;
+				}
+				break;
+			case 3:
+				if(verificar!=Fchar(texto)){
+					System.out.println("Literal char: "+texto);
+					i=7;
+					verificar=true;
+				}
+				break;
+			case 4:
+				if(verificar!=Fstring(texto)){
+					System.out.println("Literal string: "+texto);
+					i=7;
+					verificar=true;
+				}
+				break;
+			}
+		}
+		return verificar;
 	}
 }
 
