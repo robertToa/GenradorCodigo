@@ -8,18 +8,12 @@
  */
 package AnalizadorL;
 import java.util.ArrayList;
-import java.util.Scanner;
 import java.util.StringTokenizer;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 import AnalizadorL.TokenClass;
-
-import javax.swing.*;
-
+import BusArchivo.BuscarArchivo;
 import java.io.*;
 public class analizadorLex{	
-	
+	BuscarArchivo archivoIngreso=new BuscarArchivo();
 	TokenClass patron=new TokenClass();
 	private boolean verificacion;
 	private String palabra;	
@@ -31,7 +25,7 @@ public class analizadorLex{
 	
 	private void lecturaArchivo(){
 		try{
-			FileReader fileName=new FileReader("doc\\hola.txt");
+			FileReader fileName=new FileReader(archivoIngreso.fileName);
 			BufferedReader br=new BufferedReader(fileName);
 			String cadena;
 			while((cadena=br.readLine())!=null){
