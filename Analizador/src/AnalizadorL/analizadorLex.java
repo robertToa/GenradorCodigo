@@ -7,6 +7,7 @@
  * Tema: Analizaodr Lexico.
  */
 package AnalizadorL;
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 import java.util.regex.Matcher;
@@ -18,12 +19,13 @@ import javax.swing.*;
 
 import java.io.*;
 public class analizadorLex{	
+	
 	TokenClass patron=new TokenClass();
 	private boolean verificacion;
-	private String palabra;
+	private String palabra;	
+	private ArrayList <String> cadena =new ArrayList<String>();
 	
 	public analizadorLex(){
-			verificacion=false;
 			lecturaArchivo();
 	}
 	
@@ -38,8 +40,27 @@ public class analizadorLex{
 					palabra=st.nextToken();
 					VerificarTokenClass(palabra);
 				}
-				
+				CrearArchivoSalida();
 			}
+		}
+		catch(Exception e){
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void CrearArchivoSalida(){
+		try{
+			FileWriter fileNa=new FileWriter("salida.csv");
+			BufferedWriter br=new BufferedWriter(fileNa);
+			PrintWriter wr=new PrintWriter(br);
+			wr.write("TOKEN CLASS;PALABRA;LINEA DE ERROR\n");
+			for(int i=0;i<cadena.size();i++){
+				wr.write(cadena.get(i));
+				wr.write("\n");
+			}
+			wr.close();
+			br.close();
 		}
 		catch(Exception e){
 			// TODO Auto-generated catch block
@@ -48,45 +69,46 @@ public class analizadorLex{
 	}
 
 	private void VerificarTokenClass(String texto){
+		verificacion=false;
 		for(int i=0 ; i<6 ;i++){
 			switch(i){
 			case 0:
 				if(verificacion!=patron.PalabraReservada(texto)){
-					System.out.println("Palabra reservda: "+texto);
+					cadena.add("Palabra reservada;"+texto+";NO");
 					i=7;
 				}
 				break;
 			case 1:
 				if(verificacion!=patron.Literales(texto)){
+					cadena.add("Literales;"+texto+";NO");
 					i=7;
 				}
 				break;
 			
 			case 2:
 				if(verificacion!=patron.OperadorCompuesto(texto)){
-					System.out.println("Operador Compuesto: "+texto);
+					cadena.add("Operador Compuesto;"+texto+";NO");
 					i=7;
 				}
 				break;
 			case 3:
 				if(verificacion!=patron.CaracterEspecial(texto)){
-					System.out.println("CaracterEspecial: "+texto);
+					cadena.add("Caracter Especial;"+texto+";NO");
 					i=7;
 				}
 				break;
 			case 4:
 				if(verificacion!=patron.Identificador(texto)){
-					System.out.println("Identificador: "+texto);
+					cadena.add("Identificador;"+texto+";NO");
 					i=7;
 				}
 				break;
 			default:
-				System.out.println("No es un Token Class: "+texto);
+				cadena.add("No Token Class;"+texto+";Li");
 				break;
 			}
 		}
 	}
-
 	public static void main (String [] args ){
 		new analizadorLex();
 	}

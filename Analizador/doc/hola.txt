@@ -1,9 +1,9 @@
 float int char
 >= = ==
 || != >=
-; /
-, ; : ( ) [ ] { } + - * / < > = ! & $
+ / “Robert”
+,  : ( ) [ ] “Ecuador.,sd#” { } + - * / < > = ! & $
 ::
-132  -18723 0.23 1.23 2..3 .23 123
-false true fals tre  'p' 'ghj' 's' '' `s´ "" h 'hjs'
-“hjks”
+132 -18723 0.23 1.23 2..3 .23 123
+false true fals tre  'p' 'ghj' 's'  `s´  h 'hjs'
+“hjks”  “x=3”

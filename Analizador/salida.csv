@@ -1,0 +1,51 @@
+TOKEN CLASS;PALABRA;LINEA DE ERROR
+Palabra reservada;float;NO
+Palabra reservada;int;NO
+Palabra reservada;char;NO
+Operador Compuesto;>=;NO
+Caracter Especial;=;NO
+Operador Compuesto;==;NO
+Operador Compuesto;||;NO
+Operador Compuesto;!=;NO
+Operador Compuesto;>=;NO
+Caracter Especial;/;NO
+Literales;“Robert”;NO
+Caracter Especial;,;NO
+Caracter Especial;:;NO
+Caracter Especial;(;NO
+Caracter Especial;);NO
+Caracter Especial;[;NO
+Caracter Especial;];NO
+Literales;“Ecuador.,sd#”;NO
+Caracter Especial;{;NO
+Caracter Especial;};NO
+Caracter Especial;+;NO
+Caracter Especial;-;NO
+Caracter Especial;*;NO
+Caracter Especial;/;NO
+Caracter Especial;<;NO
+Caracter Especial;>;NO
+Caracter Especial;=;NO
+Caracter Especial;!;NO
+Caracter Especial;&;NO
+Caracter Especial;$;NO
+No Token Class;::;Li
+Literales;132;NO
+Literales;-18723;NO
+Literales;0.23;NO
+Literales;1.23;NO
+No Token Class;2..3;Li
+No Token Class;.23;Li
+Literales;123;NO
+Literales;false;NO
+Literales;true;NO
+Identificador;fals;NO
+Identificador;tre;NO
+Literales;'p';NO
+No Token Class;'ghj';Li
+Literales;'s';NO
+No Token Class;`s´;Li
+Identificador;h;NO
+No Token Class;'hjs';Li
+Literales;“hjks”;NO
+Literales;“x=3”;NO
