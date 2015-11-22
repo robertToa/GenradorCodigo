@@ -11,7 +11,9 @@ import java.util.regex.Matcher;
 import AnalizadorL.TokenClass;
 import java.util.regex.Pattern;
 public class TokenClass{
+	
 	private boolean verificar;
+	public String literal;
 	public boolean PalabraReservada(String texto){
 		Pattern pat = Pattern.compile("int|float|bool|char|string|if|then|else|while|do|input|output|return");
 		Matcher mat = pat.matcher(texto);
@@ -105,35 +107,35 @@ public class TokenClass{
 			switch(i){
 			case 0:
 				if(verificar!=entero(texto)){
-					System.out.println("Literal entero: "+texto);
+					literal="entero";
 					i=7;
 					verificar=true;
 				}
 				break;
 			case 1:
 				if(verificar!=Ffloat(texto)){
-					System.out.println("Literal float: "+texto);
+					literal="float";
 					i=7;
 					verificar=true;
 				}
 				break;
 			case 2:
 				if(verificar!=Fbool(texto)){
-					System.out.println("Literal boolean: "+texto);
+					literal="bool";
 					i=7;
 					verificar=true;
 				}
 				break;
 			case 3:
 				if(verificar!=Fchar(texto)){
-					System.out.println("Literal char: "+texto);
+					literal="char";
 					i=7;
 					verificar=true;
 				}
 				break;
 			case 4:
 				if(verificar!=Fstring(texto)){
-					System.out.println("Literal string: "+texto);
+					literal="string";
 					i=7;
 					verificar=true;
 				}

@@ -1,103 +1,16 @@
 TOKEN CLASS;PALABRA;LINEA DE ERROR
-Palabra reservada;float;NO
-Palabra reservada;int;NO
-Palabra reservada;char;NO
-Operador Compuesto;>=;NO
-Caracter Especial;=;NO
-Operador Compuesto;==;NO
-Operador Compuesto;||;NO
-Operador Compuesto;!=;NO
-Operador Compuesto;>=;NO
-Caracter Especial;;;NO
-Caracter Especial;/;NO
-Caracter Especial;,;NO
-Caracter Especial;;;NO
-Caracter Especial;:;NO
-Caracter Especial;(;NO
-Caracter Especial;);NO
-Caracter Especial;[;NO
-Caracter Especial;];NO
-Caracter Especial;{;NO
-Caracter Especial;};NO
-Caracter Especial;+;NO
-Caracter Especial;-;NO
-Caracter Especial;*;NO
-Caracter Especial;/;NO
-Caracter Especial;<;NO
-Caracter Especial;>;NO
-Caracter Especial;=;NO
-Caracter Especial;!;NO
-Caracter Especial;&;NO
-Caracter Especial;$;NO
-No Token Class;::;Li
-Literales;132;NO
-Literales;-18723;NO
-Literales;0.23;NO
-Literales;1.23;NO
-No Token Class;2..3;Li
-No Token Class;.23;Li
-Literales;123;NO
-Literales;false;NO
-Literales;true;NO
-Identificador;fals;NO
-Identificador;tre;NO
-Literales;'p';NO
-No Token Class;'ghj';Li
-Literales;'s';NO
-No Token Class;'';Li
-No Token Class;`s´;Li
-No Token Class;"";Li
-Identificador;h;NO
-No Token Class;'hjs';Li
-Literales;“hjks”;NO
-Literales;“x=3”;NO
-Palabra reservada;float;NO
-Palabra reservada;int;NO
-Palabra reservada;char;NO
-Operador Compuesto;>=;NO
-Caracter Especial;=;NO
-Operador Compuesto;==;NO
-Operador Compuesto;||;NO
-Operador Compuesto;!=;NO
-Operador Compuesto;>=;NO
-Caracter Especial;/;NO
-Literales;“Robert”;NO
-Caracter Especial;,;NO
-Caracter Especial;:;NO
-Caracter Especial;(;NO
-Caracter Especial;);NO
-Caracter Especial;[;NO
-Caracter Especial;];NO
-Literales;“Ecuador.,sd#”;NO
-Caracter Especial;{;NO
-Caracter Especial;};NO
-Caracter Especial;+;NO
-Caracter Especial;-;NO
-Caracter Especial;*;NO
-Caracter Especial;/;NO
-Caracter Especial;<;NO
-Caracter Especial;>;NO
-Caracter Especial;=;NO
-Caracter Especial;!;NO
-Caracter Especial;&;NO
-Caracter Especial;$;NO
-No Token Class;::;Li
-Literales;132;NO
-Literales;-18723;NO
-Literales;0.23;NO
-Literales;1.23;NO
-No Token Class;2..3;Li
-No Token Class;.23;Li
-Literales;123;NO
-Literales;false;NO
-Literales;true;NO
-Identificador;fals;NO
-Identificador;tre;NO
-Literales;'p';NO
-No Token Class;'ghj';Li
-Literales;'s';NO
-No Token Class;`s´;Li
-Identificador;h;NO
-No Token Class;'hjs';Li
-Literales;“hjks”;NO
-Literales;“x=3”;NO
+Palabra reservada;float;1
+Palabra reservada;string;1
+Palabra reservada;int;1
+Literales float;0.23;7
+Literales float;1.23;7
+No Token Class;2..3;7
+No Token Class;.23;7
+Literales entero;12;7
+Literales bool;false;8
+Literales bool;true;8
+Identificador;fals;8
+Identificador;tre;8
+Literales char;'p';8
+Literales string;“hjks”;9
+Literales string;“x=3”;9

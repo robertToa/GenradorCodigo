@@ -1,3 +1,11 @@
+/*
+ * ESCUELA POLITECNICA NACIONAL
+ * COMPILADORES Y LENGUAJES
+ * PROYECTO
+ * Nombres: Roberto Toapanta, Bryan Jarrin.
+ * GR!
+ * Tema: Analizaodr Lexico.
+ */
 package EscritorioPrin;
 import javax.swing.JDesktopPane;
 import javax.swing.JInternalFrame;

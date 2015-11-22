@@ -1,0 +1,104 @@
+TOKEN CLASS;PALABRA;LINEA DE ERROR
+Palabra reservada;string;1
+Palabra reservada;float;1
+Palabra reservada;int;1
+Palabra reservada;char;1
+Operador Compuesto;>=;2
+Caracter Especial;=;2
+Operador Compuesto;==;2
+Operador Compuesto;||;3
+Operador Compuesto;!=;3
+Operador Compuesto;>=;3
+Identificador;holas;4
+Caracter Especial;/;4
+Literales string;“EPN”;4
+Caracter Especial;,;5
+No Token Class;{);5
+Caracter Especial;(;5
+Caracter Especial;);5
+Caracter Especial;[;5
+Caracter Especial;];5
+Caracter Especial;{;5
+Caracter Especial;};5
+Caracter Especial;+;5
+Caracter Especial;-;5
+Caracter Especial;*;5
+Caracter Especial;/;5
+Caracter Especial;<;5
+Caracter Especial;>;5
+Caracter Especial;=;5
+Caracter Especial;!;5
+Caracter Especial;&;5
+Caracter Especial;$;5
+No Token Class;::;6
+Literales entero;132;7
+Literales entero;-18723;7
+Literales float;0.23;7
+Literales float;1.23;7
+No Token Class;2..3;7
+No Token Class;.23;7
+Literales entero;123;7
+Literales bool;false;8
+Literales bool;true;8
+Identificador;fals;8
+Identificador;tre;8
+Literales char;'p';8
+No Token Class;'ghj';8
+Literales char;'s';8
+No Token Class;'';8
+No Token Class;`s´;8
+No Token Class;"";8
+Identificador;h;8
+No Token Class;'hjs';8
+Literales string;“hjks”;9
+Literales string;“x=3”;9
+Palabra reservada;float;11
+Palabra reservada;int;11
+Palabra reservada;char;11
+Operador Compuesto;>=;12
+Caracter Especial;=;12
+Operador Compuesto;==;12
+Operador Compuesto;||;13
+Operador Compuesto;!=;13
+Operador Compuesto;>=;13
+Caracter Especial;/;14
+Literales string;“Robert”;14
+Caracter Especial;,;15
+Caracter Especial;:;15
+Caracter Especial;(;15
+Caracter Especial;);15
+Caracter Especial;[;15
+Caracter Especial;];15
+Literales string;“Ecuador.,sd#”;15
+Caracter Especial;{;15
+Caracter Especial;};15
+Caracter Especial;+;15
+Caracter Especial;-;15
+Caracter Especial;*;15
+Caracter Especial;/;15
+Caracter Especial;<;15
+Caracter Especial;>;15
+Caracter Especial;=;15
+Caracter Especial;!;15
+Caracter Especial;&;15
+Caracter Especial;$;15
+No Token Class;::;16
+Literales entero;132;17
+Literales entero;-18723;17
+Literales float;0.23;17
+Literales float;1.23;17
+No Token Class;2..3;17
+No Token Class;.23;17
+Literales entero;123;17
+Literales bool;false;18
+Literales bool;true;18
+Identificador;fals;18
+Identificador;tre;18
+Literales char;'p';18
+No Token Class;'ghj';18
+Literales char;'s';18
+No Token Class;`s´;18
+Identificador;h;18
+No Token Class;'hjs';18
+Literales string;“hjks”;19
+Literales string;“x=3”;19
